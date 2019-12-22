@@ -1,0 +1,2 @@
+# FS19_Nightlight3
+ Nightlight3 (Nachtlicht 3te Generation) ist ein kleines nicht synchronisiertes Ambiente-Addon für Kartenbauer.  Nightlight3 sorgt dafür das die Lichtquellen, in der Regel beleuchtete Fensterscheiben der Häuser, per Zufallsprinzip und je nach Uhrzeit in der Anzahl und Reihenfolge willkürlich angeschaltet werden. Dies soll lediglich ein "bewohnte" Atmosphäre schaffen, mehr nicht.
