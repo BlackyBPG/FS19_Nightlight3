@@ -2,6 +2,7 @@
 -- Nightlight3 (with random set)
 -- Script: Blacky_BPG
 -- 
+-- 1.9.0.3      29.02.2020    remove hour change time and add minute change time, add xml file functionality, add light group functionality
 -- 1.9.0.2      05.12.2019    update for new shader based window lights
 -- 1.9.0.1      04.12.2019    initial Version for FS19
 -- 1.5.3.1      13.04.2018    add UserAttribute for not only nightlight, expand hour chance table
@@ -12,6 +13,7 @@
 -- 
 
 Nightlight3 = {}
+Nightlight3.directory = g_currentModDirectory
 Nightlight3.hourFactor = {}
 Nightlight3.hourFactor[0]=0.45
 Nightlight3.hourFactor[1]=0.3
@@ -38,8 +40,8 @@ Nightlight3.hourFactor[21]=1.2
 Nightlight3.hourFactor[22]=0.9
 Nightlight3.hourFactor[23]=0.6
 
-Nightlight3.version = "1.9.0.2"
-Nightlight3.date = "05.12.2019"
+Nightlight3.version = "1.9.0.3"
+Nightlight3.date = "29.02.2020"
 local Nightlight3_mt = Class(Nightlight3)
 function Nightlight3.onCreate(id)
 	g_currentMission:addNonUpdateable(Nightlight3:new(id))
@@ -49,43 +51,109 @@ function Nightlight3:new(id)
 	local self = {}
 	setmetatable(self, Nightlight3_mt)
 	self.id = id
-	self.isClassic = Utils.getNoNil(getUserAttribute(self.id, "classicLight"), true)
-	self.onlyNight = Utils.getNoNil(getUserAttribute(self.id, "onlyNight"), true)
-	self.onChance = Utils.getNoNil(getUserAttribute(self.id, "onChance"), 33)
-	self.lightIntensity = Utils.getNoNil(getUserAttribute(self.id, "lightIntensity"), 1.0)
-	self.onChanceBackup = self.onChance
-
-	if not self.isClassic then
-		setShaderParameter(self.id, "lightControl", 0, 0, 0, 0, false)
-		if getNumOfChildren(self.id) > 0 then
-			self.lightsId = getChildAt(self.id, 0)
+	self.switchObject = {}
+	self.switchObject[1] = id
+	local fileName = getUserAttribute(self.id, "xmlFile")
+	if fileName ~= nil then
+		self.xmlConfig = Utils.getFilename(fileName,Nightlight3.directory)
+	end
+	self.hourFactors = {}
+	for x=0, 23 do
+		self.hourFactors[x] = Nightlight3.hourFactor[x]
+	end
+	local xmlLoader = false
+	if self.xmlConfig ~= nil and fileExists(self.xmlConfig) then
+		local configName = Utils.getNoNil(getUserAttribute(self.id, "configName"), getName(self.id))
+		local xmlFile = loadXMLFile("nightlightXML", self.xmlConfig)
+		if xmlFile ~= nil then
+			local i = 0
+			local key = string.format("nightlights.nightlight(%d)", i)
+			while hasXMLProperty(xmlFile, key) do
+				if configName == getXMLString(xmlFile, key.."#name") then
+					xmlLoader = true
+					self.isClassic = Utils.getNoNil(getXMLBool(xmlFile, key..".isClassic"),Utils.getNoNil(getUserAttribute(self.id, "classicLight"), true))
+					self.onlyNight = Utils.getNoNil(getXMLBool(xmlFile, key..".onlyNight"),Utils.getNoNil(getUserAttribute(self.id, "onlyNight"), true))
+					self.isGroup = Utils.getNoNil(getXMLBool(xmlFile, key..".isGroup"),Utils.getNoNil(getUserAttribute(self.id, "isGroup"), false))
+					self.groupAsSingle = Utils.getNoNil(getXMLBool(xmlFile, key..".groupAsSingle"),Utils.getNoNil(getUserAttribute(self.id, "groupAsSingle"), false))
+					self.onChance = Utils.getNoNil(getXMLInt(xmlFile, key..".onChance"),Utils.getNoNil(getUserAttribute(self.id, "onChance"), 33))
+					self.changeTimer = Utils.getNoNil(getXMLInt(xmlFile, key..".changeTimer"),Utils.getNoNil(getUserAttribute(self.id, "changeTimer"), 60))
+					self.lightIntensity = Utils.getNoNil(getXMLFloat(xmlFile, key..".lightIntensity"),Utils.getNoNil(getUserAttribute(self.id, "lightIntensity"), 1.0))
+					if hasXMLProperty(xmlFile, key..".hourFactors") then
+						for k=0,23 do
+							if hasXMLProperty(xmlFile, key..".hourFactors.h"..k) then
+								self.hourFactors[k] = Utils.getNoNil(getXMLFloat(xmlFile, key..".hourFactors.h"..k),self.hourFactors[k])
+							end
+						end
+					end
+				end
+				i = i + 1
+				key = string.format("nightlights.nightlight(%d)", i)
+			end
+			delete(xmlFile)
 		end
-	else
-		setVisibility(self.id, false)
+	end
+	if xmlLoader == false then
+		self.isClassic = Utils.getNoNil(getUserAttribute(self.id, "classicLight"), true)
+		self.isGroup = Utils.getNoNil(getUserAttribute(self.id, "isGroup"), false)
+		self.groupAsSingle = Utils.getNoNil(getUserAttribute(self.id, "groupAsSingle"), false)
+		self.onlyNight = Utils.getNoNil(getUserAttribute(self.id, "onlyNight"), true)
+		self.onChance = Utils.getNoNil(getUserAttribute(self.id, "onChance"), 33)
+		self.changeTimer = Utils.getNoNil(getUserAttribute(self.id, "changeTimer"), 60)
+		self.lightIntensity = Utils.getNoNil(getUserAttribute(self.id, "lightIntensity"), 1.0)
 	end
 
-	if self.lightsId ~= nil then
-		setVisibility(self.lightsId, false)
+	if self.isGroup then
+		local numObjects = getNumOfChildren(self.id)
+		if numObjects > 0 then
+			for i=1, numObjects do
+				self.switchObject[i] = getChildAt(self.id, i-1)
+			end
+		else
+			self.isGroup = false
+		end
+	end
+
+	self.onChanceBackup = self.onChance
+	self.nextMinuteTime = g_currentMission.environment.currentMinute + 1
+
+	for i=1, #self.switchObject do
+		if not self.isClassic then
+			setShaderParameter(self.switchObject[i], "lightControl", 0, 0, 0, 0, false)
+			if getNumOfChildren(self.switchObject[i]) > 0 then
+				local lightsId = getChildAt(self.switchObject[i], 0)
+				if lightsId ~= nil then
+					setVisibility(lightsId, false)
+				end
+			end
+		else
+			setVisibility(self.switchObject[i], false)
+		end
 	end
 
 	g_currentMission.environment:addWeatherChangeListener(self)
-	g_currentMission.environment:addHourChangeListener(self)
+	g_currentMission.environment:addMinuteChangeListener(self)
 	return self
 end
 
 function Nightlight3:delete()
 	if g_currentMission.environment ~= nil then
 		g_currentMission.environment:removeWeatherChangeListener(self)
-		g_currentMission.environment:removeHourChangeListener(self)
+		g_currentMission.environment:removeMinuteChangeListener(self)
 	end
 end
 
-function Nightlight3:hourChanged()
+function Nightlight3:minuteChanged()
 	self.onChance = self.onChanceBackup
-	if g_currentMission.environment ~= nil and Nightlight3.hourFactor[g_currentMission.environment.currentHour] ~= nil then
-		self.onChance = self.onChanceBackup * Nightlight3.hourFactor[g_currentMission.environment.currentHour]
+	if self.nextMinuteTime == g_currentMission.environment.currentMinute then
+		self.nextMinuteTime = self.nextMinuteTime + self.changeTimer
+		if self.nextMinuteTime > 59 then
+			self.nextMinuteTime = self.nextMinuteTime - 60
+		end
+		if g_currentMission.environment ~= nil and self.hourFactors[g_currentMission.environment.currentHour] ~= nil then
+			self.onChance = self.onChanceBackup * self.hourFactors[g_currentMission.environment.currentHour]
+		end
+		self:weatherChanged()
 	end
-	self:weatherChanged()
 end
 
 function Nightlight3:weatherChanged()
@@ -96,18 +164,23 @@ function Nightlight3:weatherChanged()
 			lightsOn = true
 		end
 
-		local lightObject = self.id
-		if not self.isClassic then
-			lightObject = self.lightsId
-		end
-		if not self.isClassic then
-			if lightsOn and lightsChance then
-				setShaderParameter(self.id, "lightControl", self.lightIntensity, 0, 0, 0, false)
-			else
-				setShaderParameter(self.id, "lightControl", 0, 0, 0, 0, false)
+		for i=1, #self.switchObject do
+			local lightObject = self.switchObject[i]
+			if not self.isClassic then
+				lightObject = getChildAt(self.switchObject[i], 0)
+			end
+			if not self.isClassic then
+				if lightsOn and lightsChance then
+					setShaderParameter(self.switchObject[i], "lightControl", self.lightIntensity, 0, 0, 0, false)
+				else
+					setShaderParameter(self.switchObject[i], "lightControl", 0, 0, 0, 0, false)
+				end
+			end
+			setVisibility(lightObject, lightsOn==true and lightsChance==true)
+			if not self.groupAsSingle then
+				lightsChance = math.random(1,100) < self.onChance
 			end
 		end
-		setVisibility(lightObject, lightsOn==true and lightsChance==true)
 	end
 end
 
