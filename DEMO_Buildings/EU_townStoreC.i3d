@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="16" filename="$data/maps/textures/european/buildingDecals01_diffuse.png"/>
+    <File fileId="17" filename="$data/maps/textures/european/buildingDecals01_normal.png"/>
+    <File fileId="18" filename="$data/maps/textures/european/buildingDecals01_specular.png"/>
+    <File fileId="6" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+    <File fileId="8" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+    <File fileId="20" filename="$data/maps/textures/european/buildingsSigns01_diffuse.png"/>
+    <File fileId="21" filename="$data/maps/textures/european/buildingsSigns01_normal.png"/>
+    <File fileId="22" filename="$data/maps/textures/european/buildingsSigns01_specular.png"/>
+    <File fileId="23" filename="$data/maps/textures/european/buildingsWindows01_diffuse.png"/>
+    <File fileId="26" filename="$data/maps/textures/european/buildingsWindows01_emissive.png"/>
+    <File fileId="24" filename="$data/maps/textures/european/buildingsWindows01_normal.png"/>
+    <File fileId="25" filename="$data/maps/textures/european/buildingsWindows01_specular.png"/>
+    <File fileId="1" filename="$data/maps/textures/european/buildingsWindowsResidential_diffuse.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/buildingsWindowsResidential_emissive.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/buildingsWindowsResidential_specular.png"/>
+    <File fileId="30" filename="$data/maps/textures/european/props/flowerPotsPlants_diffuse.png"/>
+    <File fileId="31" filename="$data/maps/textures/european/props/flowerPotsPlants_normal.png"/>
+    <File fileId="32" filename="$data/maps/textures/european/props/flowerPotsPlants_specular.png"/>
+    <File fileId="27" filename="$data/maps/textures/european/props/flowerPots_diffuse.png"/>
+    <File fileId="28" filename="$data/maps/textures/european/props/flowerPots_normal.png"/>
+    <File fileId="29" filename="$data/maps/textures/european/props/flowerPots_specular.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/townStoreC_specular.png"/>
+    <File fileId="15" filename="$data/maps/textures/shared/customGradient19.png"/>
+    <File fileId="9" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="4" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="19" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="buildingsWindows01_mat" materialId="73" alphaBlending="true" customShaderId="4">
+      <Texture fileId="23"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="25"/>
+      <Custommap name="mEmissiveMap" fileId="26"/>
+      <CustomParameter name="lightControl" value="0 1 1 1"/>
+    </Material>
+    <Material name="flowerPots_mat" materialId="79">
+      <Texture fileId="27"/>
+      <Normalmap fileId="28" bumpDepth="0"/>
+      <Glossmap fileId="29"/>
+    </Material>
+    <Material name="buildingDecals01_mat" materialId="198" alphaBlending="true" customShaderId="19">
+      <Texture fileId="16"/>
+      <Normalmap fileId="17"/>
+      <Glossmap fileId="18"/>
+    </Material>
+    <Material name="buildingsSigns01_mat" materialId="157" alphaBlending="true" customShaderId="19">
+      <Texture fileId="20"/>
+      <Normalmap fileId="21"/>
+      <Glossmap fileId="22"/>
+    </Material>
+    <Material name="flowerPotsPlants_mat" materialId="122" customShaderId="19">
+      <Texture fileId="30"/>
+      <Normalmap fileId="31"/>
+      <Glossmap fileId="32"/>
+    </Material>
+    <Material name="buildingsWindowsResidential_mat" materialId="231" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mEmissiveMap" fileId="5"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+    <Material name="buildingsArray_mat" materialId="248" customShaderId="9" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+      <Glossmap fileId="8"/>
+      <Custommap name="mMaskMap" fileId="10"/>
+      <Custommap name="mGradientMap" fileId="15"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EU_townStoreC.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="townStoreC" translation="305.802 57.405 406.596" rotation="-0 -90 0" nodeId="7192">
+      <TransformGroup name="illum" nodeId="7193">
+        <Shape shapeId="1" name="windows" static="true" clipDistance="100" nodeId="7194" materialIds="231" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="realLights" visibility="false" nodeId="7195">
+          <Light name="pointLight1" translation="-5.36465 5.34996 -1.93832" clipDistance="75" nodeId="7196" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight2" translation="-5.36465 5.34996 0.57912" clipDistance="75" nodeId="7197" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight3" translation="-5.3196 8.20803 -1.40211" clipDistance="75" nodeId="7198" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight4" translation="0.115558 5.34996 6.83792" clipDistance="75" nodeId="7199" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight5" translation="2.07986 5.34996 6.83792" clipDistance="75" nodeId="7200" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight6" translation="3.96764 5.34996 6.83792" clipDistance="75" nodeId="7201" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight7" translation="5.18464 5.34996 4.66718" clipDistance="75" nodeId="7202" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight8" translation="5.18464 5.34996 2.61507" clipDistance="75" nodeId="7203" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+          <Light name="pointLight9" translation="5.18464 5.34996 0.595978" clipDistance="75" nodeId="7204" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="2" name="townStoreC" static="true" clipDistance="180" nodeId="7205" materialIds="248" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="3" name="dirtDecals" clipDistance="70" nodeId="7206" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+      <Shape shapeId="4" name="decalsSigns" clipDistance="70" nodeId="7207" materialIds="157" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+      <Shape shapeId="5" name="glassStore" static="true" clipDistance="100" nodeId="7208" materialIds="73" castsShadows="true" receiveShadows="true"/>
+      <TransformGroup name="flowers" translation="-6.56995 4.522 6.82882" rotation="0 90 0" nodeId="6760">
+        <Shape shapeId="6" name="windowPot02" translation="0.234 0 10.664" rotation="-0 -90 0" static="true" clipDistance="50" nodeId="6761" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6762" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="0.234 0 4.685" rotation="-0 -90 0" static="true" clipDistance="50" nodeId="6763" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6764" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="0.234 0 6.688" rotation="-0 -90 0" static="true" clipDistance="50" nodeId="6765" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6766" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="0.234 0 8.656" rotation="-0 -90 0" static="true" clipDistance="50" nodeId="6767" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6768" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="0.234 0 2.644" rotation="-0 -90 0" static="true" clipDistance="50" nodeId="6769" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6770" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="1.708 0 1.475" rotation="180 -0 180" static="true" clipDistance="50" nodeId="6771" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6772" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="4.117 0 1.475" rotation="180 -0 180" static="true" clipDistance="50" nodeId="6773" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6774" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="6.131 0 1.475" rotation="180 -0 180" static="true" clipDistance="50" nodeId="6775" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6776" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="8.725 0 1.475" rotation="180 -0 180" static="true" clipDistance="50" nodeId="6777" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6778" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="11.753 0 1.475" rotation="180 -0 180" static="true" clipDistance="50" nodeId="6779" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6780" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="2.154 0 11.691" static="true" clipDistance="50" nodeId="6781" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6782" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="4.156 0 11.691" static="true" clipDistance="50" nodeId="6783" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6784" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="6.202 0 11.691" static="true" clipDistance="50" nodeId="6785" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6786" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="8.124 0 11.691" static="true" clipDistance="50" nodeId="6787" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.00304701 -1.18752 -0.327085" clipDistance="50" nodeId="6788" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="6" name="windowPot02" translation="11.352 0 11.691" static="true" clipDistance="50" nodeId="6789" materialIds="79" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="7" name="windowPlants02" translation="-0.003 -1.18752 -0.327085" clipDistance="50" nodeId="6790" materialIds="122" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="7193">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

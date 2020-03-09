@@ -39,6 +39,12 @@ Es wird nur ein Eintrag in der ModDesc.xml benötigt, und zwar wird in der <extr
 - - Typ: Boolean
 - - gibt an ob es beleuchtete Objekte sind (EmmissiveMap)(classic=true) oder nach LS19 Standard Shader-gesteuerte Objekte
 
+- ignoreNight
+- - Standardwert: false
+- - Typ: Boolean
+- - gibt an ob das Licht auch bei Tageslicht aktivert werden kann
+- - ist diese Option aktiv ist die Option "onlyNight" irrelevant
+
 - onlyNight
 - - Standardwert: true
 - - Typ: Boolean
@@ -95,6 +101,7 @@ Beispiel einer Konfigurations-XML:
     <nightlights>
 	    <nightlight name="wohnzimmer">
 		    <isClassic>true</isClassic>
+		    <ignoreNight>false</ignoreNight>
 		    <onlyNight>false</onlyNight>
 		    <isGroup>true</isGroup>
 		    <groupAsSingle>false</groupAsSingle>
@@ -176,6 +183,9 @@ Beispiel einer Konfigurations-XML:
 ------------
 
 #### CHANGELOG:
+
+- ##### Version 1.9.0.4 (09.03.2020)
+- - add ignoreNight attribute to force light on daylight
 
 - ##### Version 1.9.0.3 (29.02.2020)
 - - remove hour change time and add minute change time

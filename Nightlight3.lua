@@ -2,6 +2,7 @@
 -- Nightlight3 (with random set)
 -- Script: Blacky_BPG
 -- 
+-- 1.9.0.4      09.03.2020    add ignoreNight attribute to force light on daylight
 -- 1.9.0.3      29.02.2020    remove hour change time and add minute change time, add xml file functionality, add light group functionality
 -- 1.9.0.2      05.12.2019    update for new shader based window lights
 -- 1.9.0.1      04.12.2019    initial Version for FS19
@@ -40,8 +41,8 @@ Nightlight3.hourFactor[21]=1.2
 Nightlight3.hourFactor[22]=0.9
 Nightlight3.hourFactor[23]=0.6
 
-Nightlight3.version = "1.9.0.3"
-Nightlight3.date = "29.02.2020"
+Nightlight3.version = "1.9.0.4"
+Nightlight3.date = "09.03.2020"
 local Nightlight3_mt = Class(Nightlight3)
 function Nightlight3.onCreate(id)
 	g_currentMission:addNonUpdateable(Nightlight3:new(id))
@@ -72,6 +73,7 @@ function Nightlight3:new(id)
 				if configName == getXMLString(xmlFile, key.."#name") then
 					xmlLoader = true
 					self.isClassic = Utils.getNoNil(getXMLBool(xmlFile, key..".isClassic"),Utils.getNoNil(getUserAttribute(self.id, "classicLight"), true))
+					self.ignoreNight = Utils.getNoNil(getXMLBool(xmlFile, key..".ignoreNight"),Utils.getNoNil(getUserAttribute(self.id, "ignoreNight"), false))
 					self.onlyNight = Utils.getNoNil(getXMLBool(xmlFile, key..".onlyNight"),Utils.getNoNil(getUserAttribute(self.id, "onlyNight"), true))
 					self.isGroup = Utils.getNoNil(getXMLBool(xmlFile, key..".isGroup"),Utils.getNoNil(getUserAttribute(self.id, "isGroup"), false))
 					self.groupAsSingle = Utils.getNoNil(getXMLBool(xmlFile, key..".groupAsSingle"),Utils.getNoNil(getUserAttribute(self.id, "groupAsSingle"), false))
@@ -96,6 +98,7 @@ function Nightlight3:new(id)
 		self.isClassic = Utils.getNoNil(getUserAttribute(self.id, "classicLight"), true)
 		self.isGroup = Utils.getNoNil(getUserAttribute(self.id, "isGroup"), false)
 		self.groupAsSingle = Utils.getNoNil(getUserAttribute(self.id, "groupAsSingle"), false)
+		self.ignoreNight = Utils.getNoNil(getUserAttribute(self.id, "ignoreNight"), true)
 		self.onlyNight = Utils.getNoNil(getUserAttribute(self.id, "onlyNight"), true)
 		self.onChance = Utils.getNoNil(getUserAttribute(self.id, "onChance"), 33)
 		self.changeTimer = Utils.getNoNil(getUserAttribute(self.id, "changeTimer"), 60)
@@ -159,7 +162,7 @@ end
 function Nightlight3:weatherChanged()
 	if g_currentMission ~= nil and g_currentMission.environment ~= nil then
 		local lightsChance = math.random(1,100) < self.onChance
-		local lightsOn = false
+		local lightsOn = self.ignoreNight
 		if (self.onlyNight == false and g_currentMission.environment.weather:getIsRaining()) or not g_currentMission.environment.isSunOn then
 			lightsOn = true
 		end

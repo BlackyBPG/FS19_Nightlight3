@@ -33,6 +33,7 @@ die Konfigurations-XML befindet sich im gleichen Ordner und nennt sich nightligh
 ================================================================
 	onCreate			Standardwert: NA								modOnCreate.Nightlight3 um das Objekt an dieNightlight3 Funktionen zu binden
 	classicLight		Standardwert: true								gibt an ob es beleuchtete Objekte sind (EmmissiveMap)(classic=true) oder nach LS19 Standard Shader-gesteuerte Objekte
+	ignoreNight			Standardwert: false								gibt an ob das Licht auch bei Tageslicht aktivert werden kann ; ist diese Option aktiv ist die Option "onlyNight" irrelevant
 	onlyNight			Standardwert: true								gibt an ob das Licht nur Nachts eingeschaltet werden soll (true) oder auch bei Regen (false)
 	onChance			Standardwert: 33								gibt in Prozent an wie hoch die Wahrscheinlichkeit ist das dieses Licht an geschaltet wird
 	lightIntensity		Standardwert: 1.0								gibt an wie hell das Licht im Spiel erscheinen soll, nur relevant bei classic=false sprich neuem Shader-gesteuertem System

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="16" filename="$data/maps/textures/european/buildingDecals01_diffuse.png"/>
+    <File fileId="17" filename="$data/maps/textures/european/buildingDecals01_normal.png"/>
+    <File fileId="18" filename="$data/maps/textures/european/buildingDecals01_specular.png"/>
+    <File fileId="6" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+    <File fileId="8" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+    <File fileId="20" filename="$data/maps/textures/european/buildingsSigns01_diffuse.png"/>
+    <File fileId="21" filename="$data/maps/textures/european/buildingsSigns01_normal.png"/>
+    <File fileId="22" filename="$data/maps/textures/european/buildingsSigns01_specular.png"/>
+    <File fileId="1" filename="$data/maps/textures/european/buildingsWindowsResidential_diffuse.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/buildingsWindowsResidential_emissive.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/buildingsWindowsResidential_specular.png"/>
+    <File fileId="23" filename="$data/maps/textures/european/signsShops_diffuse.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/trainStation_specular.png"/>
+    <File fileId="15" filename="$data/maps/textures/shared/customGradient15.png"/>
+    <File fileId="9" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="4" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="19" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="24" filename="$data/shared/default_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="buildingsArray_mat" materialId="89" customShaderId="9" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+      <Glossmap fileId="8"/>
+      <Custommap name="mMaskMap" fileId="10"/>
+      <Custommap name="mGradientMap" fileId="15"/>
+    </Material>
+    <Material name="buildingDecals01_mat" materialId="198" alphaBlending="true" customShaderId="19">
+      <Texture fileId="16"/>
+      <Normalmap fileId="17"/>
+      <Glossmap fileId="18"/>
+    </Material>
+    <Material name="buildingsSigns01_mat" materialId="157" alphaBlending="true" customShaderId="19">
+      <Texture fileId="20"/>
+      <Normalmap fileId="21"/>
+      <Glossmap fileId="22"/>
+    </Material>
+    <Material name="signsShops_mat" materialId="138" customShaderId="19">
+      <Texture fileId="23"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="24"/>
+    </Material>
+    <Material name="buildingsWindowsResidential_mat" materialId="231" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mEmissiveMap" fileId="5"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EU_trainStationStorage.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="trainStationStorage" translation="122.999 68.15 612.468" rotation="-0 -90 0" nodeId="21360" lodDistance="0 120">
+      <TransformGroup name="LOD0" nodeId="21361">
+        <TransformGroup name="illum" nodeId="21362">
+          <Shape shapeId="1" name="windows" translation="1.28988 -4.26326e-16 3.40586" static="true" clipDistance="180" nodeId="21363" materialIds="231" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="realLights" translation="1.38582 1 -20.084" visibility="false" nodeId="21364">
+            <Light name="pointLight15" translation="-4.66006 2.97358 20.7348" clipDistance="75" nodeId="21365" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="6"/>
+            <Light name="pointLight16" translation="-4.40481 6.13161 22.9152" clipDistance="75" nodeId="21366" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight17" translation="-4.40481 6.13161 25.4426" clipDistance="75" nodeId="21367" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight18" translation="-4.40481 6.13161 27.943" clipDistance="75" nodeId="21368" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight19" translation="-4.40481 6.13161 30.5196" clipDistance="75" nodeId="21369" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight20" translation="-3.79351 9.20932 25.9341" clipDistance="75" nodeId="21370" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight21" translation="1.6042 6.0019 32.6683" clipDistance="75" nodeId="21371" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight22" translation="-1.81057 6.0019 32.6683" clipDistance="75" nodeId="21372" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="2" name="storage" translation="0 1.60217e-06 0" static="true" clipDistance="180" nodeId="21373" materialIds="89" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="3" name="buildingDecals" translation="1.28917 5.15481 -1.08144" clipDistance="80" nodeId="21374" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="4" name="signsDecals" translation="1.21457 3.96375 -0.839899" clipDistance="80" nodeId="21375" materialIds="157" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="5" name="logo" translation="0.503548 5.04665 2.9119" clipDistance="120" nodeId="21376" materialIds="138" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+      <TransformGroup name="LOD1" translation="0 0 3.05176e-07" nodeId="21377">
+        <TransformGroup name="illum" nodeId="21378">
+          <Shape shapeId="6" name="windows" translation="1.28988 -1.52588e-07 3.40586" clipDistance="500" nodeId="21379" materialIds="231" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <Shape shapeId="7" name="storage" translation="0 1.60217e-06 0" clipDistance="500" nodeId="21380" materialIds="89" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="21362">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="21378">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

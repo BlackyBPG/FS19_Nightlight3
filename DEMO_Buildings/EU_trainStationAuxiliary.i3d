@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="13" filename="$data/maps/textures/european/buildingDecals01_diffuse.png"/>
+    <File fileId="14" filename="$data/maps/textures/european/buildingDecals01_normal.png"/>
+    <File fileId="15" filename="$data/maps/textures/european/buildingDecals01_specular.png"/>
+    <File fileId="1" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+    <File fileId="2" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+    <File fileId="11" filename="$data/maps/textures/european/buildingsWindowsResidential_diffuse.png"/>
+    <File fileId="12" filename="$data/maps/textures/european/buildingsWindowsResidential_specular.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/trainStation_specular.png"/>
+    <File fileId="10" filename="$data/maps/textures/shared/customGradient15.png"/>
+    <File fileId="4" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="16" filename="$data/shaders/decalShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="buildingsArray_mat" materialId="89" customShaderId="4" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mMaskMap" fileId="5"/>
+      <Custommap name="mGradientMap" fileId="10"/>
+    </Material>
+    <Material name="buildingDecals01_mat" materialId="198" alphaBlending="true" customShaderId="16">
+      <Texture fileId="13"/>
+      <Normalmap fileId="14"/>
+      <Glossmap fileId="15"/>
+    </Material>
+    <Material name="buildingsWindowsResidential_mat" materialId="316">
+      <Texture fileId="11"/>
+      <Glossmap fileId="12"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EU_trainStationAuxiliary.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="trainStationAuxiliary" translation="347.547 57.8674 674.349" rotation="0 -0.34782 0" nodeId="27478">
+      <Shape shapeId="1" name="auxiliary" translation="0 0 -6.10352e-07" static="true" clipDistance="180" nodeId="27479" materialIds="89" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="2" name="windows" translation="-0.0184326 3.16876 -0.769901" static="true" clipDistance="180" nodeId="27480" materialIds="316" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="3" name="buildingDecals" translation="-0.0703117 2.65656 0.0771568" clipDistance="80" nodeId="27481" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

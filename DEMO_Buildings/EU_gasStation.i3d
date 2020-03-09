@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="30" filename="$data/maps/textures/european/auxiliaryDecals01_diffuse.png"/>
+    <File fileId="31" filename="$data/maps/textures/european/auxiliaryDecals01_normal.png"/>
+    <File fileId="32" filename="$data/maps/textures/european/auxiliaryDecals01_specular.png"/>
+    <File fileId="16" filename="$data/maps/textures/european/buildingDecals01_diffuse.png"/>
+    <File fileId="17" filename="$data/maps/textures/european/buildingDecals01_normal.png"/>
+    <File fileId="18" filename="$data/maps/textures/european/buildingDecals01_specular.png"/>
+    <File fileId="6" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+    <File fileId="8" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+    <File fileId="20" filename="$data/maps/textures/european/buildingsSigns01_diffuse.png"/>
+    <File fileId="21" filename="$data/maps/textures/european/buildingsSigns01_normal.png"/>
+    <File fileId="22" filename="$data/maps/textures/european/buildingsSigns01_specular.png"/>
+    <File fileId="1" filename="$data/maps/textures/european/buildingsWindows01_diffuse.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/buildingsWindows01_emissive.png"/>
+    <File fileId="2" filename="$data/maps/textures/european/buildingsWindows01_normal.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/buildingsWindows01_specular.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/gasStation_specular.png"/>
+    <File fileId="26" filename="$data/maps/textures/european/props/auxialiarySet_diffuse.png"/>
+    <File fileId="27" filename="$data/maps/textures/european/props/auxialiarySet_normal.png"/>
+    <File fileId="28" filename="$data/maps/textures/european/props/auxialiarySet_specular.png"/>
+    <File fileId="36" filename="$data/maps/textures/european/props/bgaPropsA_diffuse.png"/>
+    <File fileId="37" filename="$data/maps/textures/european/props/bgaPropsA_normal.png"/>
+    <File fileId="38" filename="$data/maps/textures/european/props/bgaPropsA_specular.png"/>
+    <File fileId="41" filename="$data/maps/textures/european/props/bgaPropsDecals_diffuse.png"/>
+    <File fileId="45" filename="$data/maps/textures/european/props/gasPump_decals.png"/>
+    <File fileId="42" filename="$data/maps/textures/european/props/gasPump_diffuse.png"/>
+    <File fileId="43" filename="$data/maps/textures/european/props/gasPump_normal.png"/>
+    <File fileId="44" filename="$data/maps/textures/european/props/gasPump_specular.png"/>
+    <File fileId="54" filename="$data/maps/textures/european/props/industrialWallLight_diffuse.png"/>
+    <File fileId="55" filename="$data/maps/textures/european/props/industrialWallLight_normal.png"/>
+    <File fileId="56" filename="$data/maps/textures/european/props/industrialWallLight_specular.png"/>
+    <File fileId="51" filename="$data/maps/textures/european/props/lightPoleSetGlass_diffuse.png"/>
+    <File fileId="52" filename="$data/maps/textures/european/props/lightPoleSetGlass_specular.png"/>
+    <File fileId="53" filename="$data/maps/textures/european/props/lightPoleSet_emissive.png"/>
+    <File fileId="48" filename="$data/maps/textures/european/props/neonLightSmall_diffuse.png"/>
+    <File fileId="49" filename="$data/maps/textures/european/props/neonLightSmall_normal.png"/>
+    <File fileId="50" filename="$data/maps/textures/european/props/neonLightSmall_specular.png"/>
+    <File fileId="33" filename="$data/maps/textures/european/props/propsDecals_diffuse.png"/>
+    <File fileId="35" filename="$data/maps/textures/european/props/propsDecals_specular.png"/>
+    <File fileId="23" filename="$data/maps/textures/european/signsShops_diffuse.png"/>
+    <File fileId="15" filename="$data/maps/textures/shared/customGradient21.png"/>
+    <File fileId="34" filename="$data/maps/textures/shared/default_normal.png"/>
+    <File fileId="9" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="4" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="19" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="24" filename="$data/shared/default_normal.png"/>
+    <File fileId="25" filename="$data/shared/default_specular.png"/>
+    <File fileId="39" filename="$data/shared/window02_diffuse.png"/>
+    <File fileId="40" filename="$data/shared/window02_specular.png"/>
+    <File fileId="47" filename="$data/shared/window_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="bgaPropsDecals_mat" materialId="11" customShaderId="19">
+      <Texture fileId="41"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="25"/>
+    </Material>
+    <Material name="lightPoleSetGlass_mat" materialId="18" alphaBlending="true" customShaderId="4">
+      <Texture fileId="51"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="52"/>
+      <Custommap name="mEmissiveMap" fileId="53"/>
+      <CustomParameter name="lightControl" value="1 1 1 1"/>
+    </Material>
+    <Material name="propsDecals_mat" materialId="41">
+      <Texture fileId="33"/>
+      <Normalmap fileId="34"/>
+      <Glossmap fileId="35"/>
+    </Material>
+    <Material name="window02_mat" materialId="93" alphaBlending="true">
+      <Texture fileId="39"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="40"/>
+    </Material>
+    <Material name="bgaPropsA_mat" materialId="54">
+      <Texture fileId="36"/>
+      <Normalmap fileId="37"/>
+      <Glossmap fileId="38"/>
+    </Material>
+    <Material name="gasPump_decals_mat" materialId="64" specularColor="0.494118 1 0.494118" alphaBlending="true">
+      <Texture fileId="45"/>
+    </Material>
+    <Material name="buildingDecals01_mat" materialId="198" alphaBlending="true" customShaderId="19">
+      <Texture fileId="16"/>
+      <Normalmap fileId="17"/>
+      <Glossmap fileId="18"/>
+    </Material>
+    <Material name="buildingsArray_mat" materialId="206" customShaderId="9" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+      <Glossmap fileId="8"/>
+      <Custommap name="mMaskMap" fileId="10"/>
+      <Custommap name="mGradientMap" fileId="15"/>
+    </Material>
+    <Material name="auxiliaryDecals01_mat" materialId="219" alphaBlending="true">
+      <Texture fileId="30"/>
+      <Normalmap fileId="31"/>
+      <Glossmap fileId="32"/>
+    </Material>
+    <Material name="gasPump_mat" materialId="147">
+      <Texture fileId="42"/>
+      <Normalmap fileId="43"/>
+      <Glossmap fileId="44"/>
+    </Material>
+    <Material name="buildingsSigns01_mat" materialId="157" alphaBlending="true" customShaderId="19">
+      <Texture fileId="20"/>
+      <Normalmap fileId="21"/>
+      <Glossmap fileId="22"/>
+    </Material>
+    <Material name="neonLightSmall_mat" materialId="129">
+      <Texture fileId="48"/>
+      <Normalmap fileId="49"/>
+      <Glossmap fileId="50"/>
+    </Material>
+    <Material name="signsShops_mat" materialId="138" customShaderId="19">
+      <Texture fileId="23"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="25"/>
+    </Material>
+    <Material name="auxialiarySet_mat" materialId="254">
+      <Texture fileId="26"/>
+      <Normalmap fileId="27"/>
+      <Glossmap fileId="28"/>
+    </Material>
+    <Material name="auxiliaryDecals01_mat" materialId="256" alphaBlending="true" customShaderId="19">
+      <Texture fileId="30"/>
+      <Normalmap fileId="31"/>
+      <Glossmap fileId="32"/>
+    </Material>
+    <Material name="lambert1" materialId="271" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="window02_mat" materialId="275" alphaBlending="true" customShaderId="4">
+      <Texture fileId="39"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="40"/>
+      <Custommap name="mEmissiveMap" fileId="53"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+    <Material name="buildingsWindows01_mat" materialId="320" alphaBlending="true" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mEmissiveMap" fileId="5"/>
+      <CustomParameter name="lightControl" value="1 1 1 1"/>
+    </Material>
+    <Material name="industrialWallLight_mat" materialId="321">
+      <Texture fileId="54"/>
+      <Normalmap fileId="55"/>
+      <Glossmap fileId="56"/>
+    </Material>
+    <Material name="window02_mat" materialId="322" alphaBlending="true">
+      <Texture fileId="39"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="47"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EU_gasStation.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="gasStation" translation="245.71 57.44 711.505" rotation="180 0 180" nodeId="27887" lodDistance="0 120">
+      <TransformGroup name="LOD0" nodeId="27888">
+        <TransformGroup name="illum" nodeId="27889">
+          <Shape shapeId="1" name="windows" static="true" clipDistance="180" nodeId="27890" materialIds="320" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="realLights" visibility="false" nodeId="27891">
+            <Light name="pointLight4" translation="-14.4232 2.86908 2.94853" clipDistance="75" nodeId="27892" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+            <Light name="pointLight5" translation="-14.4232 2.86908 10" clipDistance="75" nodeId="27893" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="2" name="building" translation="0.0124235 2.43298e-09 0.000146471" static="true" clipDistance="180" nodeId="27894" materialIds="206" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="3" name="dirtDecals" clipDistance="60" nodeId="27895" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="4" name="decalsSigns" translation="0.0124235 2.43298e-09 0.000146471" clipDistance="70" nodeId="27896" materialIds="157" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="5" name="logo" translation="3.05208 4.58601 2.05712" clipDistance="150" nodeId="27897" materialIds="138" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="gasStationProps" nodeId="27898">
+          <Shape shapeId="6" name="chimneyMetal" translation="-14 2.32099 13.9493" rotation="-180 -0 -180" clipDistance="65" nodeId="27899" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="7" name="col" translation="0.462254 -1.48314 -0.00473938" visibility="false" static="true" density="0.0001" nodeId="27900" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="8" name="dirt_decal" translation="0.0069814 0.273047 0.0099054" clipDistance="30" nodeId="27901" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="9" name="wallVent01" translation="-9.51084 0.374828 14.7852" clipDistance="40" nodeId="27902" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="10" name="dirt_decal" translation="0.00359698 -0.00722951 0.00289795" clipDistance="30" nodeId="27903" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="11" name="ventPipe02" translation="-10 1.3023 -2.88735" rotation="-0 -90 0" clipDistance="40" nodeId="27904" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="12" name="dirt_decal" translation="0.0128472 0.0146658 0.0128825" clipDistance="15" nodeId="27905" materialIds="256" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="13" name="electricPanel" translation="-10 1.05402 -4.44467" rotation="-0 -90 0" clipDistance="40" nodeId="27906" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="14" name="decals" clipDistance="30" nodeId="27907" materialIds="41" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="15" name="dirt_decal" translation="0.00130927 1.175 0.00255835" clipDistance="30" nodeId="27908" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-2.31931 1.2496 6.42887" rotation="-0 90 0" clipDistance="40" nodeId="27909" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27910" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="9" name="wallVent01" translation="-14 1.50094 9.97578" rotation="-0 -90 0" clipDistance="40" nodeId="27911" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="10" name="dirt_decal" translation="0.00359698 -0.00722951 0.00289795" clipDistance="30" nodeId="27912" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="9" name="wallVent01" translation="-14 1.50094 2.98008" rotation="-0 -90 0" clipDistance="40" nodeId="27913" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="10" name="dirt_decal" translation="0.00359698 -0.00722951 0.00289795" clipDistance="30" nodeId="27914" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="9" name="wallVent01" translation="-9.78522 0.447975 -1.5175" rotation="-0 -90 0" clipDistance="40" nodeId="27915" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="10" name="dirt_decal" translation="0.00359698 -0.00722951 0.00289795" clipDistance="30" nodeId="27916" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="9" name="wallVent01" translation="-8.50029 0.396725 -9.78522" rotation="180 -0 -180" clipDistance="40" nodeId="27917" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="10" name="dirt_decal" translation="0.00359698 -0.00722951 0.00289795" clipDistance="30" nodeId="27918" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="11" name="ventPipe02" translation="-14 1.17284 12.3192" rotation="-0 -90 0" clipDistance="40" nodeId="27919" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="12" name="dirt_decal" translation="0.0128472 0.0146658 0.0128825" clipDistance="15" nodeId="27920" materialIds="256" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="11" name="ventPipe02" translation="-6.7863 1.21895 15" clipDistance="40" nodeId="27921" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="12" name="dirt_decal" translation="0.0128472 0.0146658 0.0128825" clipDistance="15" nodeId="27922" materialIds="256" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-2.31931 1.2496 12.7412" rotation="-0 90 0" clipDistance="40" nodeId="27923" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27924" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-3.39796 1.46515 15" clipDistance="40" nodeId="27925" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27926" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-11.6734 1.46515 15" clipDistance="40" nodeId="27927" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27928" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-14.0106 1.35935 6.73746" rotation="-0 -90 0" clipDistance="40" nodeId="27929" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27930" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-10 1.22973 -9.36755" rotation="-0 -90 0" clipDistance="40" nodeId="27931" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27932" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-10 1.22973 -5.89819" rotation="-0 -90 0" clipDistance="40" nodeId="27933" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27934" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-4.73345 1.39415 -10" rotation="180 -5.00896e-06 180" clipDistance="40" nodeId="27935" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27936" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="16" name="ventGridTiny" translation="-7.09957 1.39415 -10" rotation="-180 -5.00896e-06 -180" clipDistance="40" nodeId="27937" materialIds="254" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="dirt_decal" translation="5.07742e-08 9.53674e-09 0.00166457" clipDistance="30" nodeId="27938" materialIds="219" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </Shape>
+          <Shape shapeId="18" name="camera01" translation="-7.56372 2.79133 -10" rotation="-0 90 0" clipDistance="50" nodeId="27939" materialIds="54" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="glass" clipDistance="50" nodeId="27940" materialIds="93" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="20" name="decals" clipDistance="30" nodeId="27941" materialIds="11" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="21" name="col" translation="0.247465 0.101406 -1.06462e-06" visibility="false" static="true" nodeId="27942" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="18" name="camera01" translation="-2.32652 3.53977 13.6167" clipDistance="50" nodeId="27943" materialIds="54" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="glass" clipDistance="50" nodeId="27944" materialIds="93" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="20" name="decals" clipDistance="30" nodeId="27945" materialIds="11" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="21" name="col" translation="0.247465 0.101406 -1.06462e-06" visibility="false" static="true" nodeId="27946" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="18" name="camera01" translation="-8.65346 2.70547 15" rotation="-0 -90 0" clipDistance="50" nodeId="27947" materialIds="54" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="glass" clipDistance="50" nodeId="27948" materialIds="93" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="20" name="decals" clipDistance="30" nodeId="27949" materialIds="11" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="21" name="col" translation="0.247465 0.101406 -1.06462e-06" visibility="false" static="true" nodeId="27950" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="18" name="camera01" translation="-10 2.55623 -1.48363" rotation="-180 -5.00896e-06 -180" clipDistance="50" nodeId="27951" materialIds="54" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="glass" clipDistance="50" nodeId="27952" materialIds="93" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="20" name="decals" clipDistance="30" nodeId="27953" materialIds="11" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="21" name="col" translation="0.247465 0.101406 -1.06462e-06" visibility="false" static="true" nodeId="27954" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="22" name="gasPump" translation="7.82716 0.193666 -3.56507" rotation="-0 90 0" scale="1.2 1 1" clipDistance="100" nodeId="27955" materialIds="147" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="23" name="decals" clipDistance="30" nodeId="27956" materialIds="64" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="24" name="glass" clipDistance="50" nodeId="27957" materialIds="322" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="25" name="col" visibility="false" static="true" clipDistance="300" nodeId="27958" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="22" name="gasPump" translation="7.82716 0.193666 -6.97117" rotation="5.05743e-07 -90 0" scale="1.2 1 1" clipDistance="100" nodeId="27959" materialIds="147" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="23" name="decals" clipDistance="30" nodeId="27960" materialIds="64" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="24" name="glass" clipDistance="50" nodeId="27961" materialIds="322" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="25" name="col" visibility="false" static="true" clipDistance="300" nodeId="27962" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="26" name="neonLightSmall" translation="10.874 4.27427 -1.89943" clipDistance="60" nodeId="27963" materialIds="129" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="27964">
+              <Shape shapeId="27" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="27965" materialIds="18" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 -0.0620853 0" visibility="false" clipDistance="75" nodeId="27966" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+            </TransformGroup>
+            <Shape shapeId="28" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="27967" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="26" name="neonLightSmall" translation="10.874 4.27427 -8.63319" clipDistance="60" nodeId="27968" materialIds="129" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="27969">
+              <Shape shapeId="27" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="27970" materialIds="18" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 -0.0620853 0" visibility="false" clipDistance="75" nodeId="27971" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+            </TransformGroup>
+            <Shape shapeId="28" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="27972" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="26" name="neonLightSmall" translation="10.874 4.27427 -5.27392" clipDistance="60" nodeId="27973" materialIds="129" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="27974">
+              <Shape shapeId="27" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="27975" materialIds="18" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 -0.0620853 0" visibility="false" clipDistance="75" nodeId="27976" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+            </TransformGroup>
+            <Shape shapeId="28" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="27977" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="26" name="neonLightSmall" translation="3.3215 4.27427 -1.89943" clipDistance="60" nodeId="27978" materialIds="129" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="27979">
+              <Shape shapeId="27" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="27980" materialIds="18" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 -0.0620853 0" visibility="false" clipDistance="75" nodeId="27981" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+            </TransformGroup>
+            <Shape shapeId="28" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="27982" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="26" name="neonLightSmall" translation="3.3215 4.27427 -5.07264" clipDistance="60" nodeId="27983" materialIds="129" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="27984">
+              <Shape shapeId="27" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="27985" materialIds="18" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 -0.0620853 0" visibility="false" clipDistance="75" nodeId="27986" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+            </TransformGroup>
+            <Shape shapeId="28" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="27987" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="26" name="neonLightSmall" translation="3.3215 4.27427 -8.85464" clipDistance="60" nodeId="27988" materialIds="129" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" translation="-0.00523476 0 0" nodeId="27989">
+              <Shape shapeId="27" name="glass" translation="0.00523476 0 0" clipDistance="60" nodeId="27990" materialIds="18" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 -0.0620853 0" visibility="false" clipDistance="75" nodeId="27991" type="point" color="0.3 0.3 0.3" emitDiffuse="true" emitSpecular="true" decayRate="1" range="7"/>
+            </TransformGroup>
+            <Shape shapeId="28" name="col" translation="-0.00523476 0 0" visibility="false" static="true" density="0.0001" nodeId="27992" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="29" name="industrialWallLight" translation="-2.31931 2.93126 6.48439" rotation="-0 90 0" clipDistance="50" nodeId="27993" materialIds="321" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" nodeId="27994">
+              <Shape shapeId="30" name="glass" clipDistance="40" nodeId="27995" materialIds="275" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 0 0.0524541" visibility="false" clipDistance="75" nodeId="27996" type="point" color="0.35 0.35 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="6"/>
+            </TransformGroup>
+            <Shape shapeId="31" name="col" visibility="false" static="true" density="0.0001" nodeId="27997" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="29" name="industrialWallLight" translation="-2.31931 2.93126 13.6339" rotation="-0 90 0" clipDistance="50" nodeId="27998" materialIds="321" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" nodeId="27999">
+              <Shape shapeId="30" name="glass" clipDistance="40" nodeId="28000" materialIds="275" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 0 0.0524541" visibility="false" clipDistance="75" nodeId="28001" type="point" color="0.35 0.35 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="6"/>
+            </TransformGroup>
+            <Shape shapeId="31" name="col" visibility="false" static="true" density="0.0001" nodeId="28002" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="29" name="industrialWallLight" translation="-9.46585 2.84658 15" clipDistance="50" nodeId="28003" materialIds="321" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" nodeId="28004">
+              <Shape shapeId="30" name="glass" clipDistance="40" nodeId="28005" materialIds="275" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 0 0.0524541" visibility="false" clipDistance="75" nodeId="28006" type="point" color="0.35 0.35 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="6"/>
+            </TransformGroup>
+            <Shape shapeId="31" name="col" visibility="false" static="true" density="0.0001" nodeId="28007" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="29" name="industrialWallLight" translation="-10.0027 2.98282 -7.42323" rotation="-0 -90 0" clipDistance="50" nodeId="28008" materialIds="321" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" nodeId="28009">
+              <Shape shapeId="30" name="glass" clipDistance="40" nodeId="28010" materialIds="275" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 0 0.0524541" visibility="false" clipDistance="75" nodeId="28011" type="point" color="0.35 0.35 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="6"/>
+            </TransformGroup>
+            <Shape shapeId="31" name="col" visibility="false" static="true" density="0.0001" nodeId="28012" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="29" name="industrialWallLight" translation="-8.53471 2.78315 -10" rotation="180 -0 -180" clipDistance="50" nodeId="28013" materialIds="321" castsShadows="true" receiveShadows="true">
+            <TransformGroup name="illum" nodeId="28014">
+              <Shape shapeId="30" name="glass" clipDistance="40" nodeId="28015" materialIds="275" castsShadows="true" receiveShadows="true"/>
+              <Light name="pointLight1" translation="0 0 0.0524541" visibility="false" clipDistance="75" nodeId="28016" type="point" color="0.35 0.35 0.35" emitDiffuse="true" emitSpecular="true" decayRate="1" range="6"/>
+            </TransformGroup>
+            <Shape shapeId="31" name="col" visibility="false" static="true" density="0.0001" nodeId="28017" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="28018">
+        <TransformGroup name="illum" nodeId="28019">
+          <Shape shapeId="32" name="windows" clipDistance="300" nodeId="28020" materialIds="320" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <Shape shapeId="33" name="building" translation="0.0124235 2.43298e-09 0.000146471" clipDistance="500" nodeId="28021" materialIds="206" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="27889">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27964">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27969">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27974">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27979">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27984">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27989">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27994">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="27999">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="28004">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="28009">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="28014">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="28019">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="30" filename="$data/maps/textures/european/auxiliaryDecals01_diffuse.png"/>
+    <File fileId="31" filename="$data/maps/textures/european/auxiliaryDecals01_normal.png"/>
+    <File fileId="32" filename="$data/maps/textures/european/auxiliaryDecals01_specular.png"/>
+    <File fileId="6" filename="$data/maps/textures/european/buildingDecals01_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/textures/european/buildingDecals01_normal.png"/>
+    <File fileId="8" filename="$data/maps/textures/european/buildingDecals01_specular.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+    <File fileId="11" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+    <File fileId="12" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+    <File fileId="1" filename="$data/maps/textures/european/buildingsWindowsResidential_diffuse.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/buildingsWindowsResidential_emissive.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/buildingsWindowsResidential_specular.png"/>
+    <File fileId="20" filename="$data/maps/textures/european/props/antennaSet_diffuse.png"/>
+    <File fileId="21" filename="$data/maps/textures/european/props/antennaSet_normal.png"/>
+    <File fileId="22" filename="$data/maps/textures/european/props/antennaSet_specular.png"/>
+    <File fileId="23" filename="$data/maps/textures/european/props/birdNest_diffuse.png"/>
+    <File fileId="24" filename="$data/maps/textures/european/props/birdNest_normal.png"/>
+    <File fileId="25" filename="$data/maps/textures/european/props/birdNest_specular.png"/>
+    <File fileId="26" filename="$data/maps/textures/european/props/wallMailbox_diffuse.png"/>
+    <File fileId="27" filename="$data/maps/textures/european/props/wallMailbox_normal.png"/>
+    <File fileId="28" filename="$data/maps/textures/european/props/wallMailbox_specular.png"/>
+    <File fileId="14" filename="$data/maps/textures/european/townBuildingB_specular.png"/>
+    <File fileId="19" filename="$data/maps/textures/shared/customGradient14.png"/>
+    <File fileId="13" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="4" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="9" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="wallMailbox_mat" materialId="6">
+      <Texture fileId="26"/>
+      <Normalmap fileId="27"/>
+      <Glossmap fileId="28"/>
+    </Material>
+    <Material name="birdNest_mat" materialId="53">
+      <Texture fileId="23"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="25"/>
+    </Material>
+    <Material name="buildingDecals01_mat" materialId="198" alphaBlending="true" customShaderId="9">
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+      <Glossmap fileId="8"/>
+    </Material>
+    <Material name="buildingsArray_mat" materialId="116" customShaderId="13" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+      <Texture fileId="10"/>
+      <Normalmap fileId="11"/>
+      <Glossmap fileId="12"/>
+      <Custommap name="mMaskMap" fileId="14"/>
+      <Custommap name="mGradientMap" fileId="19"/>
+    </Material>
+    <Material name="buildingsWindowsResidential_mat" materialId="231" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mEmissiveMap" fileId="5"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+    <Material name="auxiliaryDecals01_mat" materialId="256" alphaBlending="true" customShaderId="9">
+      <Texture fileId="30"/>
+      <Normalmap fileId="31"/>
+      <Glossmap fileId="32"/>
+    </Material>
+    <Material name="lambert1" materialId="271" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="antennaSet_mat" materialId="303">
+      <Texture fileId="20"/>
+      <Normalmap fileId="21"/>
+      <Glossmap fileId="22"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EU_townBuildingB.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="townBuildingB" translation="390.72 56.9246 714.2" rotation="-8.34256e-08 0 1.90398" nodeId="29260" lodDistance="0 120">
+      <TransformGroup name="LOD0" nodeId="29261">
+        <TransformGroup name="illum" nodeId="29262">
+          <Shape shapeId="1" name="windows" static="true" clipDistance="150" nodeId="29263" materialIds="231" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="realLights" visibility="false" nodeId="29264">
+            <Light name="pointLight1" translation="4.53323 2.48766 2.85544" clipDistance="75" nodeId="29265" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+            <Light name="pointLight2" translation="4.53323 5.50632 -2.83047" clipDistance="75" nodeId="29266" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+            <Light name="pointLight3" translation="4.53323 5.50632 -0.0975381" clipDistance="75" nodeId="29267" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+            <Light name="pointLight4" translation="-1.2207e-06 8.18687 -5.3688" clipDistance="75" nodeId="29268" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+            <Light name="pointLight5" translation="-4.66103 2.53714 2.92325" clipDistance="75" nodeId="29269" type="point" color="0.2 0.1 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="2" name="dirtDecals" clipDistance="70" nodeId="29270" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="3" name="building" static="true" clipDistance="150" nodeId="29271" materialIds="116" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="townBuildingBprops" nodeId="29272">
+          <Shape shapeId="4" name="antennaTV02" translation="0.508488 10.9922 0.0440526" clipDistance="120" nodeId="29273" materialIds="303" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="5" name="birdNest01" translation="4 7.14899 -2.70347" rotation="-0 90 0" clipDistance="40" nodeId="29274" materialIds="53" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="6" name="wallMailbox" translation="4 2.10465 -0.906624" rotation="-0 90 0" scale="0.7 0.7 0.7" clipDistance="30" nodeId="29275" materialIds="6" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="7" name="col" visibility="false" static="true" density="0.0001" nodeId="29276" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <Shape shapeId="8" name="dirtMargins" translation="0 0 0.00126612" clipDistance="10" nodeId="29277" materialIds="256" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="29278">
+        <TransformGroup name="illum" nodeId="29279">
+          <Shape shapeId="9" name="windows" clipDistance="500" nodeId="29280" materialIds="231" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <Shape shapeId="10" name="building" clipDistance="500" nodeId="29281" materialIds="116" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="29262">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="29279">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="32" filename="$data/maps/textures/european/auxiliaryDecals01_diffuse.png"/>
+    <File fileId="33" filename="$data/maps/textures/european/auxiliaryDecals01_normal.png"/>
+    <File fileId="34" filename="$data/maps/textures/european/auxiliaryDecals01_specular.png"/>
+    <File fileId="16" filename="$data/maps/textures/european/buildingDecals01_diffuse.png"/>
+    <File fileId="17" filename="$data/maps/textures/european/buildingDecals01_normal.png"/>
+    <File fileId="18" filename="$data/maps/textures/european/buildingDecals01_specular.png"/>
+    <File fileId="6" filename="$data/maps/textures/european/buildingsArray_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/textures/european/buildingsArray_normal.png"/>
+    <File fileId="8" filename="$data/maps/textures/european/buildingsArray_specular.png"/>
+    <File fileId="1" filename="$data/maps/textures/european/buildingsWindowsResidential_diffuse.png"/>
+    <File fileId="5" filename="$data/maps/textures/european/buildingsWindowsResidential_emissive.png"/>
+    <File fileId="3" filename="$data/maps/textures/european/buildingsWindowsResidential_specular.png"/>
+    <File fileId="20" filename="$data/maps/textures/european/gridSolarPanel_diffuse.png"/>
+    <File fileId="21" filename="$data/maps/textures/european/gridSolarPanel_normal.png"/>
+    <File fileId="22" filename="$data/maps/textures/european/gridSolarPanel_specular.png"/>
+    <File fileId="23" filename="$data/maps/textures/european/props/antennaSet_diffuse.png"/>
+    <File fileId="24" filename="$data/maps/textures/european/props/antennaSet_normal.png"/>
+    <File fileId="25" filename="$data/maps/textures/european/props/antennaSet_specular.png"/>
+    <File fileId="35" filename="$data/maps/textures/european/props/awningSet_diffuse.png"/>
+    <File fileId="36" filename="$data/maps/textures/european/props/awningSet_normal.png"/>
+    <File fileId="37" filename="$data/maps/textures/european/props/awningSet_specular.png"/>
+    <File fileId="26" filename="$data/maps/textures/european/props/electricalSet_diffuse.png"/>
+    <File fileId="27" filename="$data/maps/textures/european/props/electricalSet_normal.png"/>
+    <File fileId="28" filename="$data/maps/textures/european/props/electricalSet_specular.png"/>
+    <File fileId="29" filename="$data/maps/textures/european/props/propsDecals_diffuse.png"/>
+    <File fileId="30" filename="$data/maps/textures/european/props/propsDecals_specular.png"/>
+    <File fileId="38" filename="$data/maps/textures/european/props/woodFurnitureSet02_diffuse.png"/>
+    <File fileId="39" filename="$data/maps/textures/european/props/woodFurnitureSet02_normal.png"/>
+    <File fileId="40" filename="$data/maps/textures/european/props/woodFurnitureSet02_specular.png"/>
+    <File fileId="10" filename="$data/maps/textures/european/residentialBuildingC_specular.png"/>
+    <File fileId="15" filename="$data/maps/textures/shared/customGradient03.png"/>
+    <File fileId="9" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="4" filename="$data/shaders/dashboardLightsShader.xml"/>
+    <File fileId="19" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="gridSolarPanel_mat" materialId="10">
+      <Texture fileId="20"/>
+      <Normalmap fileId="21"/>
+      <Glossmap fileId="22"/>
+    </Material>
+    <Material name="electricalSet_mat" materialId="56">
+      <Texture fileId="26"/>
+      <Normalmap fileId="27"/>
+      <Glossmap fileId="28"/>
+    </Material>
+    <Material name="buildingDecals01_mat" materialId="198" alphaBlending="true" customShaderId="19">
+      <Texture fileId="16"/>
+      <Normalmap fileId="17"/>
+      <Glossmap fileId="18"/>
+    </Material>
+    <Material name="awningSet_mat" materialId="95">
+      <Texture fileId="35"/>
+      <Normalmap fileId="36"/>
+      <Glossmap fileId="37"/>
+    </Material>
+    <Material name="buildingsWindowsResidential_mat" materialId="231" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mEmissiveMap" fileId="5"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+    <Material name="woodFurnitureSet02_mat" materialId="233">
+      <Texture fileId="38"/>
+      <Normalmap fileId="39"/>
+      <Glossmap fileId="40"/>
+    </Material>
+    <Material name="auxiliaryDecals01_mat" materialId="256" alphaBlending="true" customShaderId="19">
+      <Texture fileId="32"/>
+      <Normalmap fileId="33"/>
+      <Glossmap fileId="34"/>
+    </Material>
+    <Material name="propsDecals_mat" materialId="269">
+      <Texture fileId="29"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="30"/>
+    </Material>
+    <Material name="lambert1" materialId="271" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="buildingsArray_mat" materialId="286" customShaderId="9" customShaderVariation="USE_TEXTURE_ARRAY_COLOR_MASK">
+      <Texture fileId="6"/>
+      <Normalmap fileId="7"/>
+      <Glossmap fileId="8"/>
+      <Custommap name="mMaskMap" fileId="10"/>
+      <Custommap name="mGradientMap" fileId="15"/>
+    </Material>
+    <Material name="antennaSet_mat" materialId="303">
+      <Texture fileId="23"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="25"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="EU_residentialBuildingC.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="residentialBuildingC" translation="493.877 56.744 671.743" rotation="-1.36504e-05 90 0" nodeId="30318" lodDistance="0 100">
+      <TransformGroup name="LOD0" nodeId="30319">
+        <TransformGroup name="illum" nodeId="30320">
+          <Shape shapeId="1" name="windows" static="true" clipDistance="180" nodeId="30321" materialIds="231" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="realLights" visibility="false" nodeId="30322">
+            <Light name="pointLight1" translation="2.95993 2.27067 8.40202" clipDistance="75" nodeId="30323" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+            <Light name="pointLight2" translation="-1.50742 5.35686 8.50853" clipDistance="75" nodeId="30324" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4"/>
+            <Light name="pointLight3" translation="5.58595 2.24626 5.58504" clipDistance="75" nodeId="30325" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+            <Light name="pointLight4" translation="5.58595 2.54342 2.50273" clipDistance="75" nodeId="30326" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+            <Light name="pointLight5" translation="5.58595 2.54342 -0.552106" clipDistance="75" nodeId="30327" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+            <Light name="pointLight6" translation="-1.4492 5.37146 -3.43359" clipDistance="75" nodeId="30328" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="3"/>
+            <Light name="pointLight7" translation="-4.22445 5.37146 5.62355" clipDistance="75" nodeId="30329" type="point" color="0.201 0.168352 0.080199" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2"/>
+          </TransformGroup>
+        </TransformGroup>
+        <Shape shapeId="2" name="residentialStructure" static="true" clipDistance="180" nodeId="30330" materialIds="286" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="3" name="dirtDecals" clipDistance="60" nodeId="30331" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        <Shape shapeId="4" name="solarPanels" clipDistance="150" nodeId="30332" materialIds="10" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="garage" translation="2.57904 -0.0272589 -12.867" rotation="-180 90 -180" nodeId="30333" lodDistance="0 100">
+          <TransformGroup name="LOD0" nodeId="30334">
+            <Shape shapeId="5" name="garageStructure" translation="4.76947 3.73035e-16 8.77445" static="true" clipDistance="180" nodeId="30335" materialIds="286" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="6" name="garageGlass" translation="-2.44141e-06 -1.15464e-16 0.405872" static="true" clipDistance="180" nodeId="30336" materialIds="231" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="7" name="dirtDecals" translation="-0.00303122 2.68555e-05 0.39351" clipDistance="60" nodeId="30337" materialIds="198" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+          </TransformGroup>
+          <TransformGroup name="LOD1" translation="0 2.30926e-16 3.8099e-08" nodeId="30338">
+            <Shape shapeId="8" name="garageStructure" translation="4.76947 0 8.77445" clipDistance="500" nodeId="30339" materialIds="286" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="9" name="garageGlass" translation="-2.44141e-06 0 0.405872" clipDistance="500" nodeId="30340" materialIds="231" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="residentialCprops" nodeId="30341">
+          <Shape shapeId="10" name="antennaTV01" translation="1.7604 7.49906 3.79587" clipDistance="120" nodeId="30342" materialIds="303" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="11" name="solarBattery01" translation="-3.89932 5.52053 -1.34567" rotation="-0 -90 0" clipDistance="40" nodeId="30343" materialIds="56" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="12" name="decals" clipDistance="30" nodeId="30344" materialIds="269" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="13" name="col" translation="0.00610828 0.0328343 0.149745" visibility="false" static="true" density="0.0001" nodeId="30345" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="14" name="electricitySplitter" translation="0.403203 7.45807 8.07731" clipDistance="40" nodeId="30346" materialIds="56" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="15" name="decals" translation="0 0 -0.00217241" clipDistance="30" nodeId="30347" materialIds="269" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="16" name="margins" translation="0.0214299 0.0295773 -0.000236369" clipDistance="35" nodeId="30348" materialIds="256" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="11" name="solarBattery01" translation="-3.89932 5.52053 3.73656" rotation="-0 -90 0" clipDistance="40" nodeId="30349" materialIds="56" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="12" name="decals" clipDistance="30" nodeId="30350" materialIds="269" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            <Shape shapeId="13" name="col" translation="0.00610828 0.0328343 0.149745" visibility="false" static="true" density="0.0001" nodeId="30351" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="17" name="awningUnfolded" translation="5.38922 3.63592 -0.519929" rotation="-0 90 0" clipDistance="80" nodeId="30352" materialIds="95" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="18" name="col" visibility="false" static="true" density="0.0001" nodeId="30353" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="17" name="awningUnfolded" translation="3.88088 3.68265 -3.02109" rotation="-180 -0 -180" clipDistance="80" nodeId="30354" materialIds="95" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="18" name="col" visibility="false" static="true" density="0.0001" nodeId="30355" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="17" name="awningUnfolded" translation="-3.89932 3.59978 5.60965" rotation="1.73028e-05 -90 0" clipDistance="80" nodeId="30356" materialIds="95" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="18" name="col" visibility="false" static="true" density="0.0001" nodeId="30357" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="19" name="awningFolded" translation="-3.89932 3.61189 2.5806" rotation="-0 -90 0" clipDistance="70" nodeId="30358" materialIds="95" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="20" name="col" visibility="false" static="true" density="0.0001" nodeId="30359" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="19" name="awningFolded" translation="-3.89932 3.61189 -0.576411" rotation="-0 -90 0" clipDistance="70" nodeId="30360" materialIds="95" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="20" name="col" visibility="false" static="true" density="0.0001" nodeId="30361" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="21" name="foldingWoodChair" translation="6.09685 1 7.96791" rotation="180 2.33174 -180" clipDistance="60" nodeId="30362" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="22" name="col" translation="-0.000968724 0.455507 0" visibility="false" static="true" density="0.0001" nodeId="30363" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="23" name="woodTable" translation="6.4646 1 8.31271" clipDistance="100" nodeId="30364" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="24" name="col" translation="-0.00330298 0.374721 -1.13249e-08" visibility="false" static="true" density="0.0001" nodeId="30365" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="21" name="foldingWoodChair" translation="0.924618 1 8.7582" rotation="180 80.606 180" clipDistance="60" nodeId="30366" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="22" name="col" translation="-0.000968724 0.455507 0" visibility="false" static="true" density="0.0001" nodeId="30367" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="21" name="foldingWoodChair" translation="6.89571 1 7.87179" rotation="8.82802e-07 6.05203 4.84212e-08" clipDistance="60" nodeId="30368" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="22" name="col" translation="-0.000968724 0.455507 0" visibility="false" static="true" density="0.0001" nodeId="30369" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="21" name="foldingWoodChair" translation="6.94826 1 8.64517" rotation="8.7957e-07 -3.54985 -9.91144e-08" clipDistance="60" nodeId="30370" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="22" name="col" translation="-0.000968724 0.455507 0" visibility="false" static="true" density="0.0001" nodeId="30371" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="21" name="foldingWoodChair" translation="6.02271 1 8.70808" rotation="180 -4.97666 -180" clipDistance="60" nodeId="30372" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="22" name="col" translation="-0.000968724 0.455507 0" visibility="false" static="true" density="0.0001" nodeId="30373" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+          <Shape shapeId="21" name="foldingWoodChair" translation="-3.37258 1 8.39943" rotation="1.01881e-05 88.6221 1.01838e-05" clipDistance="60" nodeId="30374" materialIds="233" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="22" name="col" translation="-0.000968724 0.455507 0" visibility="false" static="true" density="0.0001" nodeId="30375" materialIds="271" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          </Shape>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="LOD1" nodeId="30376">
+        <TransformGroup name="illum" nodeId="30377">
+          <Shape shapeId="25" name="windows" rotation="7.62939e-06 0 0" clipDistance="500" nodeId="30378" materialIds="231" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <Shape shapeId="26" name="residentialStructure" clipDistance="500" nodeId="30379" materialIds="286" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="30320">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+    <UserAttribute nodeId="30377">
+      <Attribute name="onCreate" type="scriptCallback" value="NightIllumination.onCreate"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>
